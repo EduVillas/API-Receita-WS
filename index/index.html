@@ -88,16 +88,20 @@
 
             <div id="status"></div>
 
-            <label for="cnpj">CNPJ:</label> <input type="text" id="cnpj" value="" class="form-control input-sn"/>
+            <label for="cnpj">CNPJ:</label> 
+            <input type="text" id="cnpj" value="" class="form-control input-sn" maxlength="14" />
             <hr>
-            <label for="razao">Razão:</label> <input type="text" id="razao" class="form-control input-sn"/><br>
-            <label for="responsavel">Responsável:</label> <input type="text" id="responsavel" class="form-control input-sn"/><br>
-            <label for="fone1">Telefone 1:</label> <input type="text" id="fone1" class="form-control input-sn"/><br>
-            <label for="logradouro">Logradouro:</label> <input type="text" id="logradouro" class="form-control input-sn"/><br>
-            <label for="numero">Número:</label> <input type="text" id="numero" class="form-control input-sn"/><br>
-            <label for="bairro">Bairro:</label> <input type="text" id="bairro" class="form-control input-sn"/><br>
-            <label for="municipio">Município:</label> <input type="text" id="municipio" class="form-control input-sn"/><br>
-            <label for="uf">UF:</label> <input type="text" id="uf" class="form-control input-sn"/><br>
+
+            <div id="dados" style="display: none" >
+                <label for="razao">Razão:</label> <input type="text" id="razao" class="form-control input-sn"/><br>
+                <label for="responsavel">Responsável:</label> <input type="text" id="responsavel" class="form-control input-sn"/><br>
+                <label for="fone1">Telefone 1:</label> <input type="text" id="fone1" class="form-control input-sn"/><br>
+                <label for="logradouro">Logradouro:</label> <input type="text" id="logradouro" class="form-control input-sn"/><br>
+                <label for="numero">Número:</label> <input type="text" id="numero" class="form-control input-sn"/><br>
+                <label for="bairro">Bairro:</label> <input type="text" id="bairro" class="form-control input-sn"/><br>
+                <label for="municipio">Município:</label> <input type="text" id="municipio" class="form-control input-sn"/><br>
+                <label for="uf">UF:</label> <input type="text" id="uf" class="form-control input-sn"/><br>
+            </div>
 
             <center><button type="submit" class="btn btn-outline-success">Nova Consulta</button></center>
         </div>
