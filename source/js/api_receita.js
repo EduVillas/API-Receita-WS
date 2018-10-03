@@ -1,9 +1,9 @@
 
 (function ($) {
-    $.fn.receitaws = function (options) {
+    $.fn.wsreceita = function (options) {
         $this = this;
 
-        $.fn.receitaws.options = {
+        $.fn.wsreceita.options = {
             afterRequest: function () {
             },
             success: function (data) {
@@ -13,13 +13,13 @@
             fail: function (message) {
             },
             fields: {},
-            urlRequest: '../dist/php/receita-ws.php'
+            urlRequest: '../source/php/ws_receita.php'
         };
 
         /*
          Duplicate request controller. (Cache)
          */
-        $.fn.receitaws.lastRequest = {
+        $.fn.wsreceita.lastRequest = {
             cnpj: null,
             data: null
         };
@@ -28,13 +28,13 @@
         function getData(cnpj) {
             cnpj = cnpj.replace(/\D/g, '');
 
-            var lastRequest = $.fn.receitaws.lastRequest;
+            var lastRequest = $.fn.wsreceita.lastRequest;
 
             return new Promise(function (success, fail) {
                 if (lastRequest.cnpj == cnpj) {
                     success(lastRequest.dados);
                 } else {
-                    $.getJSON($.fn.receitaws.options.urlRequest + "?cnpj=" + cnpj, function (data) {
+                    $.getJSON($.fn.wsreceita.options.urlRequest + "?cnpj=" + cnpj, function (data) {
                         lastRequest.cnpj = cnpj;
                         lastRequest.dados = data;
 
@@ -47,9 +47,9 @@
         }
 
 
-        $.fn.receitaws.init = function (options) {
+        $.fn.wsreceita.init = function (options) {
 
-            $.fn.receitaws.options = $.extend({}, $.fn.receitaws.options, options);
+            $.fn.wsreceita.options = $.extend({}, $.fn.wsreceita.options, options);
 
             return $this.keyup(function () {
                 var cnpj = $(this).val().replace(/\D/g, '');
@@ -81,6 +81,6 @@
             });
         };
 
-        return $.fn.receitaws.init(options);
+        return $.fn.wsreceita.init(options);
     };
 })(jQuery);
